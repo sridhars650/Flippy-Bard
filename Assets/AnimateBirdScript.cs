@@ -15,7 +15,7 @@ public class AnimateBirdScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Animator>().Play("Base Layer.BirdFlapping");
+            GetComponent< Animator > ().SetTrigger("BirdFlap");
         }
     }
 }
