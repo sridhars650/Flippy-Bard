@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AnimateBirdScript : MonoBehaviour
 {
+
+    public LogicScript logic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +16,13 @@ public class AnimateBirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (!(logic.gameIsPaused))
         {
-            GetComponent< Animator > ().SetTrigger("BirdFlap");
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)
+                || Input.touchCount > 0)
+            {
+                GetComponent<Animator>().SetTrigger("BirdFlap");
+            }
         }
     }
 }
