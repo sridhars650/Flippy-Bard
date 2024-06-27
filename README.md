@@ -1,4 +1,4 @@
-Hello and welcome to Flippy Bard, a new twist on the classic Flappy Bird! The name was chosen with care to reflect our unique take on the game.
+Hello and welcome to Flippy Bard, a new twist on the classic Flappy Bird! The name was chosen with care to reflect my unique take on the game.
 
 Currently available exclusively for macOS, Flippy Bard is easy to start playing. Simply download and unzip the .app.zip file, double-click the application, and you're ready to go. Click "Start" to begin your adventure.
 
