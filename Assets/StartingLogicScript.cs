@@ -5,7 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StartingLogicScript : MonoBehaviour
-{ 
+{
+    public Text highScoreText;
+
+    public void Start()
+    {
+        Debug.Log(PlayerPrefs.GetInt("HighScore"));
+        highScoreText.text = $"High Score: {PlayerPrefs.GetInt("HighScore")}";
+    }
 
     public void startGame()
     {
@@ -16,4 +23,6 @@ public class StartingLogicScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+
 }
