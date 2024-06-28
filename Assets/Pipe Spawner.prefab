@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipe: {fileID: 3668259623238800045, guid: 5295170f37d14437ca846823d450a430, type: 3}
+  background: {fileID: 362188922798419588, guid: 6725f1850275d48b08175b0c97c25c33, type: 3}
   spawnRate: 2
-  timer: 0
+  heightOffset: 10
