@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainGame.unity
     guid: 26ae2dfb5593b4a87a9a1b7acb56b285
+  - enabled: 1
+    path: Assets/HelpScreen.unity
+    guid: 64d5d4b38673d420e87d2fcfd40c6d43
   m_configObjects: {}
