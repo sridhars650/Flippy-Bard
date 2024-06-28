@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
-    public Text scoreText;
+    public TMP_Text scoreText;
     public GameObject gameOverScreen;
-    public Text highScoreText;
+    public TMP_Text highScoreText;
     public bool gameIsPaused;
     public Text pauseResumeButtonText;
     public GameObject pauseScreen;
-    public Button pauseResumeButton;
-
+    public GameObject pauseResumeButton;
+    public bool gameIsOver;
+    
     public void Start()
     {
         highScoreText.text = $"High Score: {PlayerPrefs.GetInt("HighScore")}";
@@ -35,25 +37,33 @@ public class LogicScript : MonoBehaviour
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        pauseResumeButton.SetActive(true);
+        gameIsOver = false;
     }
 
     public void gameOver()
     {
+        gameIsOver = true;
         gameOverScreen.SetActive(true);
+        pauseResumeButton.SetActive(false);
+
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseGame();
-            if (gameIsPaused)
+            if (!gameIsOver)
             {
-                pauseScreen.SetActive(true);
-            }
-            else
-            {
-                pauseScreen.SetActive(false);
+                pauseGame();
+                if (gameIsPaused)
+                {
+                    pauseScreen.SetActive(true);
+                }
+                else
+                {
+                    pauseScreen.SetActive(false);
+                }
             }
         }
     }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StartingLogicScript : MonoBehaviour
 {
-    public Text highScoreText;
+    public TMP_Text highScoreText;
 
     public void Start()
     {
@@ -24,5 +25,9 @@ public class StartingLogicScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void sendToHelpScreen()
+    {
+        SceneManager.LoadScene("HelpScreen");
+    }
 
 }
